@@ -19,14 +19,13 @@ const arrOfInputs = [
   messageArea,
 ]
 
-
 // ADD KEY UP EVENT ON PHONE INPUT
 phoneInput.addEventListener('keyup', () => {
- if (phoneInput.value.length < 8 || phoneInput.value.length > 10) {
-   phoneInput.style.color = 'red'
- } else {
-   phoneInput.style.color = 'black'
- }
+  if (phoneInput.value.length < 8 || phoneInput.value.length > 10) {
+    phoneInput.style.color = 'red'
+  } else {
+    phoneInput.style.color = 'black'
+  }
 })
 
 // ADD KEY UP EVENT ON EMAIL INPUT
@@ -38,39 +37,36 @@ emailInput.addEventListener('keyup', () => {
   }
 })
 
-
 // RESETTING THE WHOLE FORM WHEN RESET BUTTON IS CLICKED
-reset.addEventListener('click', (e)=>{
- e.preventDefault()
- // LOOP OVER CREATED ARRAY OF INPUTS EXCEPT SUBMIT AND RESET 
- arrOfInputs.forEach(input => {
-  input.value = '' //CLEAR ALL INPUT FIELD
-  if(input.classList.contains('red-error')){
-   input.classList.remove('red-error') //REMOVE RED COLOR ON INPUTS
-  }
-  if(input.id === 'name'){
-   input.placeholder = 'Name' // SET PLACEHOLDER TO INITIAL PLACEHOLDER
-  }
-  if (input.id === 'email') {
-    input.placeholder = 'Email'
-  }
-  if (input.id === 'phone') {
-    input.placeholder = 'Phone'
-  }
-  if (input.id === 'company') {
-    input.placeholder = 'Company'
-  }
-  if (input.id === 'message') {
-    input.placeholder = 'Your Message'
-  }
- })
-
+reset.addEventListener('click', (e) => {
+  e.preventDefault()
+  // LOOP OVER CREATED ARRAY OF INPUTS EXCEPT SUBMIT AND RESET
+  arrOfInputs.forEach((input) => {
+    input.value = '' //CLEAR ALL INPUT FIELD
+    if (input.classList.contains('red-error')) {
+      input.classList.remove('red-error') //REMOVE RED COLOR ON INPUTS
+    }
+    if (input.id === 'name') {
+      input.placeholder = 'Name' // SET PLACEHOLDER TO INITIAL PLACEHOLDER
+    }
+    if (input.id === 'email') {
+      input.placeholder = 'Email'
+    }
+    if (input.id === 'phone') {
+      input.placeholder = 'Phone'
+    }
+    if (input.id === 'company') {
+      input.placeholder = 'Company'
+    }
+    if (input.id === 'message') {
+      input.placeholder = 'Your Message'
+    }
+  })
 })
-
 
 // SENDING DATA WHEN SEND BUTTON IS CLICKED
 send.addEventListener('click', (e) => {
- e.preventDefault()
+  e.preventDefault()
   arrOfInputs.forEach((input) => {
     if (input.value === '') {
       input.classList.add('red-error') // ADD RED COLOR ON INPUT
@@ -87,19 +83,17 @@ send.addEventListener('click', (e) => {
       if (input.id === 'company') {
         input.placeholder = 'write your company name' //SET COMPANY FIELD PLACEHOLDER
       }
-      if(input.id === 'message') {
+      if (input.id === 'message') {
         input.placeholder = 'write your message' //SET MESSAGE FIELD PLACEHOLDER
       }
       return
-    } 
-     //REMOVE THE RED COLOR ON INPUT 
+    }
+    //REMOVE THE RED COLOR ON INPUT
     else {
       if (input.classList.contains('red-error')) {
         input.classList.remove('red-error')
       }
-      
     }
-    
   })
 
   //CONSOLE THE DATA ADDED IN ANY INPUT
@@ -116,8 +110,4 @@ send.addEventListener('click', (e) => {
   //   'Message:',
   //   messageArea.value
   // )
-
 })
-
-
-
