@@ -192,7 +192,8 @@ footer p {
  border-bottom: 1px solid red;
 } */
 
-.red-error::placeholder, .red-error#message::placeholder {
+.red-error::placeholder,
+.red-error#message::placeholder {
   color: red;
   font-size: 18px;
 }
