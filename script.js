@@ -28,9 +28,9 @@ phoneInput.addEventListener('keyup', () => {
   }
 })
 
-// ADD KEY UP EVENT ON EMAIL INPUT
+// ADD EVENT ON EMAIL INPUT TO CHECK VALIDITY
 emailInput.addEventListener('keyup', () => {
-  if (!emailInput.value.includes('@')) {
+  if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
     emailInput.style.color = 'red'
   } else {
     emailInput.style.color = 'black'
