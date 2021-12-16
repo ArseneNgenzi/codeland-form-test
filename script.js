@@ -30,7 +30,9 @@ phoneInput.addEventListener('keyup', () => {
 
 // ADD EVENT ON EMAIL INPUT TO CHECK VALIDITY
 emailInput.addEventListener('keyup', () => {
-  if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+  // const regExpression = /\S+@\S+\.\S+/
+  const regularExpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!regularExpression.test(emailInput.value)) {
     emailInput.style.color = 'red'
   } else {
     emailInput.style.color = 'black'
